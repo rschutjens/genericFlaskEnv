@@ -31,12 +31,14 @@ is installed in a different location. I can now:
     - call: python --> this should actually use the local venv version
     - after activation, call: py --> use local [venv version of python][soVenvActivate2] (shows up venv name in command line)  
     The shebang method works only for calling scripts. [Other discussion pylauncher and association.][soVenvAss]
-* other things to look into is autoenv and environmentwrapper
+* [other things to look into is autoenv and environmentwrapper][autoEnvWrapper]
+* [Venv and git][vEnvGit]
 
 ### Dependencies
 * [rhode schwarz vna][rsVna] has an example of setup.py for dependencies of python project, also check out vagrant/
 * [python packages and dependencies][pyPackDep]
 * [Fullstack Python application dependencies][fsPyAppDep]
+* [git list tracked files][gitTracked]
 * [pip freeze][pipFreeze]: 
     - Running pip freeze in my project results in a laundry list of dependencies. 
     - Only when running it with the Venv activated did it give the right list! before it just
@@ -79,8 +81,12 @@ is installed in a different location. I can now:
     - for libraries you use a setup.py file, setuptools
 
 ### Setting up git for the project
-* [creating a .gitignore file][gitIgnore]
-* [Starting web projects using Flask][enigmetaFlask]
+* [creating a .gitignore file][gitIgnore]: read for untracking files
+* [Starting web projects using Flask][enigmetaFlask]: WSGI script, Fabric deployment
+* undo git staging: git reset
+* stage all: git add .
+* check .gitignore file is correct. can I ignore all files in venv folder?
+
 
 
 
@@ -98,3 +104,6 @@ is installed in a different location. I can now:
 [soVenvActivate2]: http://stackoverflow.com/questions/14604699/how-to-activate-virtualenv
 [gitIgnore]: https://help.github.com/articles/ignoring-files/
 [enigmetaFlask]: http://www.enigmeta.com/blog/starting-flask/
+[autoEnvWrapper]: http://timmyreilly.azurewebsites.net/python-pip-virtualenv-installation-on-windows/
+[vEnvGit]: http://stackoverflow.com/questions/6590688/is-it-bad-to-have-my-virtualenv-directory-inside-my-git-repository
+[gitTracked]: http://stackoverflow.com/questions/15606955/how-can-i-make-git-show-a-list-of-the-files-that-are-being-tracked

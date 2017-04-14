@@ -1,6 +1,8 @@
 # Virtualenv
+flask/
 .Python
 Scripts
 Lib
 include
 *.py[cod]
+.cfg
