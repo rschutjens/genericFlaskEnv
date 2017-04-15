@@ -16,7 +16,8 @@ py filename.py from the commandline (uses shebang notation at top of python file
 
 
 ## Notes:
-### Virtual Environment in Python
+### Virtual Environment in 
+* [virtual environment tools python summary][venvToolsSummary]
 * [Virtual environments][theHitchhikersGuidetoPython]
 * My local installation of python is 3.5.2 via the Anaconda 64 bit version for windows
 * it seems anaconda doesn't come with the python file launcher for windows, need to get 
@@ -33,6 +34,9 @@ is installed in a different location. I can now:
     The shebang method works only for calling scripts. [Other discussion pylauncher and association.][soVenvAss]
 * [other things to look into is autoenv and environmentwrapper][autoEnvWrapper]
 * [Venv and git][vEnvGit]
+* activate venv: venv\Scripts\activate (this is a batch file, this works without venvwrapper)
+* bind project folder with venv: inside activated venv: setprojectdir .
+* [atom and virtualenv][virtualenvAtom]
 
 ### Dependencies
 * [rhode schwarz vna][rsVna] has an example of setup.py for dependencies of python project, also check out vagrant/
@@ -87,6 +91,22 @@ is installed in a different location. I can now:
 * stage all: git add .
 * check .gitignore file is correct. can I ignore all files in venv folder?
 
+### Setting up project
+* clone repository from git
+* create a virtualEnv in the directory: virtualEnv flask (tested with python 3.5.2 64 bit anaconda custom version)
+* install packages: pip install -r requirements.txt
+* you should now be able to run: python run.py 
+* open up a browser and go to http://127.0.0.1:5000/
+
+Note: run.py has a shebang line that automatically uses the python from the virtualenv
+named flask (this path also depends on your operating system, the one provided is for
+windows #!flask\Scripts\python).
+You can set up a virtual environment with 
+
+alternatively you can start the flask application by (using powershell):
+* activating the virtualenv: flask\Scripts\activate
+* $Env:FLASK_APP=".\run.py" ([see here for powershell commands][powershellCommands])
+* flask run (or [flask shell, this can be used to make interactive session][flaskShell])
 
 
 
@@ -107,3 +127,7 @@ is installed in a different location. I can now:
 [autoEnvWrapper]: http://timmyreilly.azurewebsites.net/python-pip-virtualenv-installation-on-windows/
 [vEnvGit]: http://stackoverflow.com/questions/6590688/is-it-bad-to-have-my-virtualenv-directory-inside-my-git-repository
 [gitTracked]: http://stackoverflow.com/questions/15606955/how-can-i-make-git-show-a-list-of-the-files-that-are-being-tracked
+[venvToolsSummary]: http://stackoverflow.com/questions/41573587/what-is-the-difference-between-venv-pyvenv-pyenv-virtualenv-virtualenvwrappe
+[flaskShell]: http://flask.pocoo.org/docs/0.12/cli/
+[powershellCommands]: https://technet.microsoft.com/en-us/library/ff730964.
+[virtualenvAtom]: https://atom.io/packages/virtualenv
