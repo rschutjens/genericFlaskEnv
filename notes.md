@@ -1,6 +1,6 @@
 # GenericFlaskEnv Notes
 
-Setup a generic Flask virtual invironment.
+Setup a generic Flask virtual environment.
 
 ## Goals:
 1. Setup a python virtual environment called flask in the project folder
@@ -90,18 +90,30 @@ is installed in a different location. I can now:
 * undo git staging: git reset
 * stage all: git add .
 * check .gitignore file is correct. can I ignore all files in venv folder?
+* [push project to github][githubPush]
 
 ### Setting up project
-* clone repository from git
+* clone repository from git: git clone https://github.com/rschutjens/genericFlaskEnv.git
+* cd genericFlaskEnv
 * create a virtualEnv in the directory: virtualEnv flask (tested with python 3.5.2 64 bit anaconda custom version)
+
+If created with virtualenvwrapper you'll activate the environment immediately. The command
+line tool usually indicates it. 
+You can check the version of python is active, powershell: python -V, bash: which 
+python. If it is not the environment one, activate it, powershell: .\flask\Scripts\activate, 
+bash: source flask\\Scripts\\activate.
+there is different options if you use virtualenvwrapper, like workon
+
 * install packages: pip install -r requirements.txt
 * you should now be able to run: python run.py 
 * open up a browser and go to http://127.0.0.1:5000/
 
 Note: run.py has a shebang line that automatically uses the python from the virtualenv
 named flask (this path also depends on your operating system, the one provided is for
-windows #!flask\Scripts\python).
-You can set up a virtual environment with 
+windows #!flask\Scripts\python). The shebang will only work on windows with the pylauncher
+installed (if you installed python with anaconda it is not provided, use a standard 
+installed python)
+You can set up a virtual environment with virtualenvwrapper too.
 
 alternatively you can start the flask application by (using powershell):
 * activating the virtualenv: flask\Scripts\activate
@@ -131,3 +143,4 @@ alternatively you can start the flask application by (using powershell):
 [flaskShell]: http://flask.pocoo.org/docs/0.12/cli/
 [powershellCommands]: https://technet.microsoft.com/en-us/library/ff730964.
 [virtualenvAtom]: https://atom.io/packages/virtualenv
+[githubPush]: https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/
