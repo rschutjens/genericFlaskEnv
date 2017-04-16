@@ -4,7 +4,7 @@ Flask-OpenID==1.2.5
 Flask-Mail==0.9.1
 Flask-SQLAlchemy==2.2
 sqlalchemy-migrate==0.11.0
-Flask-WooshAlchemy==0.56
+Flask-WhooshAlchemy==0.56
 Flask-WTF==0.14.2
 flask-Babel==0.11.1
 guess-language==0.2
